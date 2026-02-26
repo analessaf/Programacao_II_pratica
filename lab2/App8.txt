@@ -1,0 +1,20 @@
+Explicação do resultado do App8:
+
+Contas do Banco java:
+[1111,-1050.0]
+[1234,-1090.0]
+[2222,99.0]
+[3333,200.0]
+[4444,-101.0]
+[7777,-300.0]
+
+A execução do App8 cria um banco e adiciona contas de tipos diferentes que herdam da Conta mãe que é abstrata, fazendo com que cada uma seja tratada conforme suas próprias regras e tenham os metodos e atributos dela. Após adicionar as contas, o método aumentarLimiteEspeciais(200) aumenta apenas o limite das Especial, sem mexer nas contas normais ou Infinitas.
+
+Em seguida, o banco do App8 adiciona todas as contas criadas e executa tentarSacar(1100), e nesse momento que vem os valores no terminal:
+
+[1111, -1050.0] - A Conta Infinita iniciou com 50 e realizou o saque mesmo sem saldo suficiente. Como ela permite saldo negativo, o valor final ficou 50 − 1100 = −1050
+[1234, -1090.0] - A primeira Conta Especial começou com saldo 10 e limite aumentado para 1200. O saque foi feito usando saldo + limite, resultando em 10 − 1100 = −1090
+[2222, 99.0] - A primeira Conta Bancaria comum tem apenas 99. Como não tinha saldo suficiente, o saque não foi feito e o valor ficou 99
+[3333, 200.0] - A segunda Conta Bancaria com saldo 1300 conseguiu sacar, sendo 1300 − 1100 = 200
+[4444, -101.0] - A segunda Conta Infinita com saldo 999 realizou o saque, resultando em 999 − 1100 = −101
+[7777, -300.0] - Conta Especial com saldo 800 e limite aumentado para 400 conseguiu sacar usando o limite, ficando 800 − 1100 = −300
